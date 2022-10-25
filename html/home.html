@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="C:\Users\Nayla Leyva\Documents\prograWeb\style.css">
+    
+    <title>Calificaciones</title>
+</head>
+<body>
+   
+      <h1>Promedios</h1>
+      <p align="right"> <button id="PromediarTodo" onclick="calcularPromedioGeneral()">Calcular Promedio</button></p>
+      <h2>Promedios generales:</h2>
+        <h2 id="texto"></h2>
+      <table>
+        <thead>
+          <th>Nombre del alumno</th>
+          <th>Parcial 1</th>
+          <th>Parcial 2</th>
+          <th>Parcial 3</th>
+          <th>Promedio</th>
+          <th></th>
+        </thead>
+        <tbody>
+            <tr id="alumno-1"><!--Table row-->
+            <td>Juanito</td>
+            <td><input type="number" class="parcial-1" length=5></td>
+            <td><input type="number" class="parcial-2" ></td>
+            <td><input type="number" class="parcial-3" ></td>
+            <td id="primerCalificacion" class="promedio-general">5</td>
+            <td><button id="boton1" onclick='calcularPromedio("alumno-1")'>Calcular</button></td>
+          </tr>
+          <tr id="alumno-2"><!--Table row-->
+            <td>Sandra</td>
+            <td><input type="number" class="parcial-1" ></td>
+            <td><input type="number" class="parcial-2" ></td>
+            <td><input type="number" class="parcial-3" ></td>
+            <td id="segundaCalificacion" class="promedio-general">5</td>
+            <td><button id="boton2" onclick='calcularPromedio("alumno-2")'>Calcular</button></td>
+          </tr>
+          <tr id="alumno-3"><!--Table row-->
+            <td>Roberto</td>
+            <td><input type="number" class="parcial-1"></td>
+            <td><input type="number" class="parcial-2" ></td>
+            <td><input type="number" class="parcial-3" ></td>
+            <td id="tercerCalificacion" class="promedio-general">5</td>
+            <td><button id="boton3" onclick='calcularPromedio("alumno-3")'>Calcular</button></td>
+          </tr>
+          <tr id="alumno-4"><!--Table row-->
+            <td>Jesús</td>
+            <td><input type="number"  class="parcial-1" ></td>
+            <td><input type="number"  class="parcial-2" ></td>
+            <td><input type="number"  class="parcial-3" ></td>
+            <td id="cuartaCalificacion" class="promedio-general">5</td>
+            <td><button id="boton4" onclick='calcularPromedio("alumno-4")'>Calcular</button></td>
+          </tr>
+          <tr id="alumno-5"><!--Table row-->
+            <td>jorge</td>
+            <td><input type="number"  class="parcial-1" ></td>
+            <td><input type="number"  class="parcial-2" ></td>
+            <td><input type="number"  class="parcial-3" ></td>
+            <td id="quintaCalificacion" class="promedio-general">5</td>
+            <td><button id="boton5" onclick='calcularPromedio("alumno-5")'>Calcular</button></td>
+          </tr>
+          <tr id="alumno-6"><!--Table row-->
+            <td>Pablo</td>
+            <td><input type="number"  class="parcial-1" ></td>
+            <td><input type="number"  class="parcial-2" ></td>
+            <td><input type="number"  class="parcial-3" ></td>
+            <td id="sextaCalificacion" class="promedio-general" type="number">6</td>
+            <td><button id="boton6" onclick='calcularPromedio("alumno-6")'>Calcular</button></td>
+          </tr>
+        </tbody>
+        <tfooter></tfooter>
+      </table>
+  
+</body>
+
+</html>
+<!--src="C:\Users\Nayla Leyva\Documents\prograWeb\script.js"--->
+<script >
+function calcularPromedio(idColumna){
+    let columna=document.getElementById(idColumna);
+
+    let parcial1=parseInt(columna.querySelector(".parcial-1").value);
+    let parcial2=parseInt(columna.querySelector(".parcial-2").value);
+    let parcial3=parseInt(columna.querySelector(".parcial-3").value);
+
+    let promedioGeneral=((parcial1+parcial2+parcial3)/3);
+    let elementoPromedio=columna.getElementsByClassName("promedio-general")[0];
+    elementoPromedio.innerHTML=promedioGeneral;
+    
+}
+
+//calcularPromedioGeneral
+//sacarTodosLosPromedios 
+
+// function calcularPromedioGeneral(){
+//   var PrimerAlumno=parseInt(document.getElementById("promedioju").value);
+//   var SegundoAlumno=parseInt(document.getElementById("promediosa").value);
+//   var TercerAlumno=parseInt(document.getElementById("promedioro").value);
+//   var CuartoAlumno=parseInt(document.getElementById("promedioje").value);
+//   var QuintoAlumno=parseInt(document.getElementById("promediojo").value);
+//   var SextoAlumno=parseInt(document.getElementById("promediopa").value);
+//   var PG=((PrimerAlumno+SegundoAlumno+TercerAlumno+CuartoAlumno+QuintoAlumno+SextoAlumno)/6);
+//   document.getElementById("PromediosGenerales").innerHTML=PG.toFixed(2);
+// }
+
+function calcularPromedioGeneral(){
+  // var calif1=parseInt(document.getElementById('primerCalificacion').value);
+  // var calif2=parseInt(document.getElementById('segundaCalificacion').value);
+  // var calif3=parseInt(document.getElementById('tercerCalificacion').value);
+  // var calif4=parseInt(document.getElementById('cuartaCalificacion').value);
+  // var calif5=parseInt(document.getElementById('quintaCalificacion').value);
+  // var calif6=parseInt(document.getElementById('sextaCalificacion').value);
+
+  // var promedioGeneral=(calif1);
+  // var promediosGenerales=(document.getElementById('texto'));
+  // promediosGenerales.innerHTML=promedioGeneral;
+
+  // var promediosGenerales=(document.getElementById('texto'));
+  var final=parseInt(document.getElementById("sextaCalificacion").value);
+  var texto=(document.getElementById("texto"));
+
+  texto.innerHTML=(final);
+}
+</script>
